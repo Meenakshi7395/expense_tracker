@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Spend wise
+          Spend wise Dev
         
         </a>
       </header>
