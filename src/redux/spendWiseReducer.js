@@ -7,9 +7,10 @@ const initialData = {
         description:"Test Expense",
         date:"20-02-2024",
         amount:400,
-        category:"Food"}
+        category:"food"}
     ],
-    totalSpending:400
+    totalSpending:400,
+    categories:["Food","Bills","Entertainment","Groceries"]
 }
 
 const spendWiseSlice = createSlice(
@@ -24,10 +25,10 @@ const spendWiseSlice = createSlice(
                 }
                 state.expenses.push(newExpense)
 
-                state.totalExpenses = state.totalExpenses + action.payload.amount;
+                state.totalSpending = state.totalSpending +  Number(newExpense.amount);
             },
             removeExpense:(state,action)=>{
-                state.expenses = state.expenses.filter((expense)=>expense.id !=action.id)
+                state.expenses = state.expenses.filter((expense)=>expense.id !=action.payload.id)
             },
             renameUser:(state,action)=>{
                 state.user = action.user
