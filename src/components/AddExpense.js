@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { addExpense } from "../redux/spendWiseReducer";
 import { useDispatch } from "react-redux";
-
+import './AddExpense.css';
 function AddExpense(){
     
     const [date, setDate] = useState(new Date());
@@ -30,16 +30,18 @@ function AddExpense(){
 
     return <>
          {/* <form onSubmit={getValue}>  */}
-            <label>
+         
+            <div className="card">
+            <label>Date
                 <input type="date" name="date"  placeholder="Enter Date" onChange={(event)=>setDate(event.target.value)} value={date}/>
             </label><br/>
-            <label>
+            <label>Daecription
                 <input type="text" name="description" placeholder="Description" onChange={(event)=>setDescription(event.target.value)}/>     
             </label><br/>
-            <label>
+            <label>Amount
             <   input type="number" name="amount" placeholder="Amount" onChange={(event)=>setAmount(event.target.value)}/>
             </label><br/>
-            <label>
+            <label>Category
             <select id="category" name="Category" onChange={(event)=>setCategory(event.target.value)}>
                 <option >Select</option>
                 <option value="food">Food</option>
@@ -48,8 +50,8 @@ function AddExpense(){
                 <option value="bills">Bills</option>
             </select>
             </label><br/>
-            <button onClick={onSubmit}>Submit</button>
-           
+            <button id="btn" onClick={onSubmit}>Submit</button>
+           </div>
         </>
 }
 

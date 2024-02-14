@@ -1,0 +1,18 @@
+h1{
+    text-align: center;
+}
+
+.column-50 {
+    float: left;
+    width: 50%;
+    
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  
